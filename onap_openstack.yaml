@@ -72,10 +72,6 @@ parameters:
     type: string
     description: Name of the Extra Large Flavor supported by the cloud provider
 
-  flavor_xxlarge:
-    type: string
-    description: Name of the Extra Extra Large Flavor supported by the cloud provider
-
   vm_base_name:
     type: string
     description: Base name of ONAP VMs
@@ -622,7 +618,7 @@ resources:
     type: OS::Nova::Server
     properties:
       image: { get_param: ubuntu_1404_image }
-      flavor: { get_param: flavor_small }
+      flavor: { get_param: flavor_medium }
       name:
         str_replace:
           template: base-dns-server
@@ -2349,7 +2345,7 @@ resources:
     type: OS::Nova::Server
     properties:
       image: { get_param: ubuntu_1604_image }
-      flavor: { get_param: flavor_small }
+      flavor: { get_param: flavor_medium }
       name:
         str_replace:
           template: base-nbi
